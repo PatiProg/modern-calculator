@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    border: none;
+    outline: none;
+    text-decoration: none;
+}
+
+body {
+    background-color: #333;
+}
+
+.display {
+    background-color: #333;
+    height: 25vh;
+    width: 100%;
+    text-align: end;
+    color: white;
+    padding: 40px;
+    padding-right: 20px;
+    font-size: 42px;
+}
+
+.calculator {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 20px;
+    border-top: 1px solid black;
+    border-radius: 24px 24px 0 0;
+}
+
+.row {
+    flex: 1;
+}
+
+button {
+    padding: 24px 20px;
+    font-size: 1.2rem;
+    background: rgba(255, 255, 255, 0.1); /* leicht durchsichtig */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* dezente Linien */
+    backdrop-filter: blur(10px); /* macht das Glas */
+    -webkit-backdrop-filter: blur(10px); /* für Safari */
+    border-radius: 16px;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* Glas-Schatten */
+    max-width: 100%;
+}
+
+button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+    transform: translateY(-3px);
+}
+
+
+button.wide {
+    grid-column: span 2;
+}
+
+button.op {
+    background: rgba(0, 150, 80, 0.2);
+    border: 1px solid rgba(0, 255, 140, 0.3);
+}
+
+@media (min-width: 800px) {
+    .display {
+        height: 15vh;
+    }
+}
+
+@media (min-width: 1200px) {
+    .display {
+        height: 25vh;
+    }
+
+    button {
+        height: 72px;
+    }
+}
